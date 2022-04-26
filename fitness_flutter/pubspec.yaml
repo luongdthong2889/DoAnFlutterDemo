@@ -39,7 +39,11 @@ dependencies:
 
    # Firebase
   firebase_core: ^1.15.0
+<<<<<<< HEAD
   firebase_auth: ^3.0.1
+=======
+  firebase_auth: ^3.3.15
+>>>>>>> 2ea1e5e04c99a8f39b07ea273e53f30bb7ffbf4d
 
   # Page View dots indicator
   dots_indicator: ^2.1.0

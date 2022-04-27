@@ -1,7 +1,6 @@
 import 'package:fitness_flutter/core/const/color_constants.dart';
 import 'package:fitness_flutter/core/const/path_constants.dart';
 import 'package:fitness_flutter/core/const/text_constants.dart';
-import 'package:fitness_flutter/data/workout_data.dart';
 import 'package:fitness_flutter/screens/home/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,8 +22,8 @@ class HomeStatistics extends StatelessWidget {
       ),
     );
   }
-
-   Widget _createComletedWorkouts(BuildContext context, HomeBloc bloc) {
+  
+  Widget _createComletedWorkouts(BuildContext context, HomeBloc bloc) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       padding: const EdgeInsets.all(15),
@@ -88,14 +87,7 @@ class HomeStatistics extends StatelessWidget {
     );
   }
 
-   int? getInProgressWorkouts() {
-    final completedWorkouts = workouts.where(
-        (w) => (w.currentProgress ?? 0) > 0 && w.currentProgress != w.progress);
-    return completedWorkouts.length;
-  }
-
-  
-Widget _createColumnStatistics(HomeBloc bloc) {
+  Widget _createColumnStatistics(HomeBloc bloc) {
     return Column(
       children: [
         DataWorkouts(
@@ -113,17 +105,6 @@ Widget _createColumnStatistics(HomeBloc bloc) {
         ),
       ],
     );
-  }
-  
-  int? getTimeSent() {
-    for (final WorkoutData workout in workouts) {
-      exercises.addAll(workout.exerciseDataList!);
-    }
-    final exercise = exercises.where((e) => e.progress == 1).toList();
-    exercise.forEach((e) {
-      timeSent += e.minutes!;
-    });
-    return timeSent;
   }
 }
 

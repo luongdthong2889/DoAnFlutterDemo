@@ -1,6 +1,7 @@
 class TextConstants {
   // Common
   static const String start = "Start";
+  static const String continueT = "Continue";
 
   // Onboarding
   static const String onboarding1Title = "Workout anywhere";
@@ -165,4 +166,9 @@ class TextConstants {
   static const passwordReset = 'Password Reset';
   static const sendActivationBuild = 'Send Activation Link';
   static const resetPasswordLinkWasSent = 'Reset password link was sent on your email.';
+
+  static const String startWorkout = "Start Workout";
+  static const String signToStart = "Sooo, it's sign to start right now!";
+  static const String sportActivity = "Sport activity improves memory!";
+  static const String didYouKnow = "Did You Know";
 }

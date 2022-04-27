@@ -5,7 +5,10 @@ import 'package:fitness_flutter/core/const/text_constants.dart';
 import 'package:fitness_flutter/data/workout_data.dart';
 import 'package:fitness_flutter/screens/common_widgets/fitness_button.dart';
 import 'package:fitness_flutter/screens/home/bloc/home_bloc.dart';
+import 'package:fitness_flutter/screens/home/widget/home_statistics.dart';
 import 'package:fitness_flutter/screens/tab_bar/bloc/tab_bar_bloc.dart';
+import 'package:fitness_flutter/screens/workout_details_screen/page/workout_details_page.dart';
+import 'package:fitness_flutter/screens/workouts/widget/workouts_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,7 +47,7 @@ class HomeContent extends StatelessWidget {
       ),
     );
   }
-
+  
   Widget _createProfileData(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -117,7 +120,7 @@ class HomeContent extends StatelessWidget {
         ? _createStartWorkout(context, bloc)
         : HomeStatistics();
   }
-
+  
   Widget _createStartWorkout(BuildContext context, HomeBloc bloc) {
     final blocTabBar = BlocProvider.of<TabBarBloc>(context);
     return Container(
@@ -265,15 +268,7 @@ class HomeContent extends StatelessWidget {
       ),
     );
   }
+}
 
-  int getProgressPercentage() {
-    final completed = workouts
-        .where((w) =>
-            (w.currentProgress ?? 0) > 0 && w.currentProgress == w.progress)
-        .toList();
-    final percent01 =
-        completed.length.toDouble() / DataConstants.workouts.length.toDouble();
-    final percent = (percent01 * 100).toInt();
-    return percent;
-  }
+EditAccountScreen() {
 }

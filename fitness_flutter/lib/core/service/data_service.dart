@@ -8,6 +8,8 @@ class DataService {
   static Future<List<WorkoutData>> getWorkoutsForUser() async {
     final currUserEmail = GlobalConstants.currentUser.mail;
 
+    // await UserStorageService.deleteSecureData('${currUserEmail}Workouts');
+
     final workoutsStr =
         await UserStorageService.readSecureData('${currUserEmail}Workouts');
     if (workoutsStr == null) return [];

@@ -31,7 +31,7 @@ dependencies:
     sdk: flutter
 
   #BloC  
-  flutter_bloc: ^8.0.1
+  flutter_bloc: ^7.0.1
   
   # Firebase
   firebase_core: ^1.15.0

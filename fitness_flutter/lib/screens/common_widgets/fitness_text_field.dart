@@ -54,7 +54,7 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
     stateIsError = widget.isError;
   }
 
-   @override
+  @override
   void didUpdateWidget(covariant FitnessTextField oldWidget) {
     super.didUpdateWidget(oldWidget);
 
@@ -119,22 +119,6 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
     );
   }
 
-  Widget _createShowEye() {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          stateObscureText = !stateObscureText;
-        });
-      },
-      child: Image(
-        image: AssetImage(
-          PathConstants.eye,
-        ),
-        color: widget.controller.text.isNotEmpty ? ColorConstants.primaryColor : ColorConstants.grey,
-      ),
-    );
-  }
-
   Widget _createTextField() {
     return TextField(
       focusNode: focusNode,
@@ -171,6 +155,22 @@ class _FitnessTextFieldState extends State<FitnessTextField> {
         setState(() {});
         widget.onTextChanged();
       },
+    );
+  }
+
+  Widget _createShowEye() {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          stateObscureText = !stateObscureText;
+        });
+      },
+      child: Image(
+        image: AssetImage(
+          PathConstants.eye,
+        ),
+        color: widget.controller.text.isNotEmpty ? ColorConstants.primaryColor : ColorConstants.grey,
+      ),
     );
   }
 

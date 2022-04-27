@@ -1,5 +1,5 @@
-import 'package:fitness_flutter/core/const/text_constants.dart';
 import 'package:fitness_flutter/core/const/color_constants.dart';
+import 'package:fitness_flutter/core/const/text_constants.dart';
 import 'package:fitness_flutter/core/service/validation_service.dart';
 import 'package:fitness_flutter/screens/common_widgets/fitness_button.dart';
 import 'package:fitness_flutter/screens/common_widgets/fitness_loading.dart';
@@ -7,6 +7,7 @@ import 'package:fitness_flutter/screens/common_widgets/fitness_text_field.dart';
 import 'package:fitness_flutter/screens/sign_up/bloc/signup_bloc.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpContent extends StatelessWidget {
@@ -39,10 +40,6 @@ class SignUpContent extends StatelessWidget {
       ),
     );
   }
-}
-  Widget _createLoading() {
-    return FitnessLoading();
-  }
 
   Widget _createMainData(BuildContext context) {
     return SafeArea(
@@ -63,6 +60,10 @@ class SignUpContent extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _createLoading() {
+    return FitnessLoading();
   }
 
   Widget _createTitle() {
@@ -143,14 +144,11 @@ class SignUpContent extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: BlocBuilder<SignUpBloc, SignUpState>(
-        buildWhen: (_, currState) =>
-            currState is SignUpButtonEnableChangedState,
+        buildWhen: (_, currState) => currState is SignUpButtonEnableChangedState,
         builder: (context, state) {
           return FitnessButton(
             title: TextConstants.signUp,
-            isEnabled: state is SignUpButtonEnableChangedState
-                ? state.isEnabled
-                : false,
+            isEnabled: state is SignUpButtonEnableChangedState ? state.isEnabled : false,
             onTap: () {
               FocusScope.of(context).unfocus();
               bloc.add(SignUpTappedEvent());
@@ -187,3 +185,4 @@ class SignUpContent extends StatelessWidget {
       ),
     );
   }
+}

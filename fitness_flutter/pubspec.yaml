@@ -1,5 +1,5 @@
 name: fitness_flutter
-description: A new Flutter project.
+description: Ung dung tap Gym , Yoga Nhom 10.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,25 +30,55 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #BloC  
+  flutter_bloc: ^7.0.1
+  
+  # Firebase
+  firebase_core: ^1.15.0
+  firebase_auth: ^3.0.1
+  firebase_storage: ^10.2.13
 
+  # Secure storage
+  flutter_secure_storage: ^5.0.2
+
+  # IOS Icons
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  #BloC  
-  flutter_bloc: ^7.0.1
 
-   # Firebase
-  firebase_core: ^1.15.0
-  firebase_auth: ^3.0.1
   # Page View dots indicator
   dots_indicator: ^2.1.0
 
   # Percent circle
   percent_indicator: ^4.0.0
 
-  # Secure storage
-  flutter_secure_storage: ^5.0.2
+  # URL launcher
+  url_launcher: ^6.1.0
 
+  # Workout Details sliding up panel
+  sliding_up_panel: ^2.0.0+1
+
+  # Video player
+  chewie: ^1.3.2
+
+  # Countdown timer
+  custom_timer: ^0.1.1
+
+  # Image library
+  image_picker: ^0.8.5
+
+  # Reminder notification
+  flutter_local_notifications: ^9.4.1
+
+  # Timezone
+  timezone: ^0.8.0
+
+  # Native timezone
+  flutter_native_timezone: ^2.0.0
+
+  # Permission handler
+  permission_handler: ^9.2.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
